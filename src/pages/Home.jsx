@@ -1,19 +1,12 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import { ArrowRight, TrendingUp } from 'lucide-react';
-import techImg from '../assets/tech_1.jpg';
-import logiImg from '../assets/logi_1.jpg';
-import realEstateImg from '../assets/LOF_1.jpeg';
-import capitalImg from '../assets/capital.png';
-import founderImg from '../assets/Founder_1.PNG';
-import founderHeroImg from '../assets/Founder_2.PNG';
-import founderVisionImg from '../assets/Founder_2.PNG';
-import globalImg from '../assets/Global_supp.jpg';
-
-// Import scroll images
-import tech2 from '../assets/tech_2.jpg';
-import logi2 from '../assets/logi_2.jpg';
-import lof2 from '../assets/LOF_2.jpeg';
+import ResponsiveImage from '../components/ResponsiveImage';
+import {
+    tech_1, logi_1, LOF_1, capital,
+    Founder_1, Founder_2, Global_supp,
+    tech_2, logi_2, LOF_2
+} from '../assets/images';
 import SEO from '../components/SEO';
 import TextPressure from '../components/TextPressure';
 import RotatingText from '../components/RotatingText';
@@ -25,43 +18,45 @@ const verticals = [
         id: 'tech',
         title: 'Technology Division',
         desc: 'Advanced Digital Infrastructure & AI Solutions',
-        img: techImg,
+        img: tech_1,
         color: 'from-blue-600/20 to-indigo-900/40' // Custom overlay tint
     },
     {
         id: 'logi',
         title: 'Logistics & Transportation',
         desc: 'Global Supply Chain & Freight Networks',
-        img: logiImg,
+        img: logi_1,
         color: 'from-amber-600/20 to-orange-900/40'
     },
     {
         id: 're',
         title: 'Real Estate & Infrastructure',
         desc: 'Premium Commercial & Residential Assets',
-        img: realEstateImg,
+        img: LOF_1,
         color: 'from-emerald-600/20 to-green-900/40'
     },
     {
         id: 'cap',
         title: 'Strategic Investments',
         desc: 'Venture Capital & Private Equity',
-        img: capitalImg,
+        img: capital,
         color: 'from-slate-600/20 to-slate-900/40'
     }
 ];
 
 const galleryImages = [
-    { src: founderVisionImg, label: 'Vision' },
-    { src: globalImg, label: 'Global Reach' },
-    { src: tech2, label: 'Innovation' },
-    { src: logi2, label: 'Systems' },
-    { src: lof2, label: 'Assets' }
+    { src: Founder_2, label: 'Vision' },
+    { src: Global_supp, label: 'Global Reach' },
+    { src: tech_2, label: 'Innovation' },
+    { src: logi_2, label: 'Systems' },
+    { src: LOF_2, label: 'Assets' }
 ];
 
 const Home = ({ section }) => {
     const headerRef = useRef(null);
+    const scrollRef = useRef(null);
     const [isArticleOpen, setIsArticleOpen] = useState(false);
+    const [isPaused, setIsPaused] = useState(false);
 
     // Scroll to section based on prop
     useEffect(() => {
@@ -120,7 +115,28 @@ const Home = ({ section }) => {
         return () => document.body.classList.remove('bio-open');
     }, [isArticleOpen]);
 
-    // Auto-scroll Gallery Logic - Logic removed for CSS animation
+    // Auto-scroll Gallery Logic
+    useEffect(() => {
+        const scrollContainer = scrollRef.current;
+        if (!scrollContainer) return;
+
+        let animationFrameId;
+
+        const scroll = () => {
+            if (!isPaused) {
+                if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+                    scrollContainer.scrollLeft = 0;
+                } else {
+                    scrollContainer.scrollLeft += 1;
+                }
+            }
+            animationFrameId = requestAnimationFrame(scroll);
+        };
+
+        animationFrameId = requestAnimationFrame(scroll);
+
+        return () => cancelAnimationFrame(animationFrameId);
+    }, [isPaused]);
 
     return (
         <div id="home" className="min-h-screen text-white selection:bg-brand-accent selection:text-white overflow-x-hidden relative">
@@ -241,10 +257,12 @@ const Home = ({ section }) => {
                             }}
                         >
                             {/* Image */}
-                            <img
-                                src={founderHeroImg}
+                            <ResponsiveImage
+                                image={Founder_2}
                                 alt="Founder"
                                 className="h-full w-auto object-contain object-center opacity-90"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                priority
                             />
                         </motion.div>
                     </div>
@@ -277,10 +295,11 @@ const Home = ({ section }) => {
                                 firstContent={
                                     <div className="relative w-full h-full group overflow-hidden rounded-sm border border-white/5 bg-brand-dark/50">
                                         <div className="absolute inset-0">
-                                            <img
-                                                src={verticals[0].img}
+                                            <ResponsiveImage
+                                                image={verticals[0].img}
                                                 alt={verticals[0].title}
                                                 className="w-full h-full object-cover"
+                                                sizes="(max-width: 768px) 100vw, 50vw"
                                             />
                                             <div className={`absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/80`} />
                                         </div>
@@ -297,10 +316,11 @@ const Home = ({ section }) => {
                                 secondContent={
                                     <div className="relative w-full h-full group overflow-hidden rounded-sm border border-white/5 bg-brand-dark/50">
                                         <div className="absolute inset-0">
-                                            <img
-                                                src={verticals[1].img}
+                                            <ResponsiveImage
+                                                image={verticals[1].img}
                                                 alt={verticals[1].title}
                                                 className="w-full h-full object-cover"
+                                                sizes="(max-width: 768px) 100vw, 50vw"
                                             />
                                             <div className={`absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/80`} />
                                         </div>
@@ -327,10 +347,11 @@ const Home = ({ section }) => {
                                 firstContent={
                                     <div className="relative w-full h-full group overflow-hidden rounded-sm border border-white/5 bg-brand-dark/50">
                                         <div className="absolute inset-0">
-                                            <img
-                                                src={verticals[2].img}
+                                            <ResponsiveImage
+                                                image={verticals[2].img}
                                                 alt={verticals[2].title}
                                                 className="w-full h-full object-cover"
+                                                sizes="(max-width: 768px) 100vw, 50vw"
                                             />
                                             <div className={`absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/80`} />
                                         </div>
@@ -347,10 +368,11 @@ const Home = ({ section }) => {
                                 secondContent={
                                     <div className="relative w-full h-full group overflow-hidden rounded-sm border border-white/5 bg-brand-dark/50">
                                         <div className="absolute inset-0">
-                                            <img
-                                                src={verticals[3].img}
+                                            <ResponsiveImage
+                                                image={verticals[3].img}
                                                 alt={verticals[3].title}
                                                 className="w-full h-full object-cover"
+                                                sizes="(max-width: 768px) 100vw, 50vw"
                                             />
                                             <div className={`absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/80`} />
                                         </div>
@@ -393,10 +415,11 @@ const Home = ({ section }) => {
                         {/* Portrait Section (Sticky on desktop) */}
                         <div className="lg:w-[35%] relative z-10 shrink-0">
                             <div className="relative h-[500px] lg:h-[600px] w-full rounded-sm overflow-hidden border border-white/10 group">
-                                <img
-                                    src={founderImg}
+                                <ResponsiveImage
+                                    image={Founder_1}
                                     alt="Samuel Anthony Dsouza"
                                     className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                                    sizes="(max-width: 1024px) 100vw, 35vw"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80" />
 
@@ -418,27 +441,25 @@ const Home = ({ section }) => {
                             </div>
                         </div>
 
-                        {/* Continuous Horizontal Scroll Gallery */}
                         <div className="lg:w-[65%] relative group/gallery overflow-hidden mask-linear-fade">
-                            <motion.div
-                                className="flex gap-4 items-center"
-                                animate={{ x: ["0%", "-50%"] }}
-                                transition={{
-                                    repeat: Infinity,
-                                    ease: "linear",
-                                    duration: 15
-                                }}
+                            <div
+                                ref={scrollRef}
+                                className="flex gap-4 items-center overflow-x-auto hide-scrollbar scroll-smooth"
+                                onMouseEnter={() => setIsPaused(true)}
+                                onMouseLeave={() => setIsPaused(false)}
+                                onTouchStart={() => setIsPaused(true)}
+                                onTouchEnd={() => setIsPaused(false)}
                             >
                                 {[...galleryImages, ...galleryImages].map((img, idx) => (
                                     <div
                                         key={idx}
                                         className="relative flex-none w-[85vw] md:w-[400px] h-[300px] md:h-[400px] lg:h-[500px] rounded-sm overflow-hidden border border-white/10 group bg-brand-dark"
                                     >
-                                        <img
-                                            src={img.src}
+                                        <ResponsiveImage
+                                            image={img.src}
                                             alt={img.label}
-                                            loading="lazy"
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                                            sizes="(max-width: 768px) 85vw, 400px"
                                         />
                                         <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 to-transparent">
                                             <span className="text-white/80 font-mono text-xs uppercase tracking-widest border-l-2 border-brand-accent pl-3">
@@ -447,7 +468,7 @@ const Home = ({ section }) => {
                                         </div>
                                     </div>
                                 ))}
-                            </motion.div>
+                            </div>
 
                             {/* Gradient Masks for Fade Edge */}
                             <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-brand-black to-transparent z-10 pointer-events-none" />
@@ -525,7 +546,7 @@ const Home = ({ section }) => {
                                         </div>
 
                                         <div className="pt-12 mt-12 border-t border-white/10">
-                                            <img src={founderHeroImg} alt="Signature" className="h-24 opacity-50 mb-4 object-contain object-left" />
+                                            <ResponsiveImage image={Founder_2} alt="Signature" className="h-24 opacity-50 mb-4 object-contain object-left" />
                                             <p className="font-mono text-xs text-slate-500 uppercase tracking-widest">Founder & Chairman, LOF Enterprises</p>
                                         </div>
 

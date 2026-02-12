@@ -1,21 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import infraImg from '../assets/infra.png';
-import techImg from '../assets/tech.png';
-import capitalImg from '../assets/capital.png';
-import visionImg from '../assets/vision.jpg';
-import missionImg from '../assets/mission.jpg';
-import SEO from '../components/SEO';
-import TextPressure from '../components/TextPressure';
-import Folder from '../components/Folder';
-
-// Import Ecosystem additional images
-import file1_1 from '../assets/File1_1.jpg';
-import file1_2 from '../assets/File1_2.jpg';
-import file2_1 from '../assets/File2_1.jpg';
-import file2_2 from '../assets/File2_2.jpg';
-import file3_1 from '../assets/File3_1.jpg';
-import file3_2 from '../assets/File3_2.jpg';
+import ResponsiveImage from '../components/ResponsiveImage';
+import {
+    infra, tech, capital, vision, mission,
+    File1_1, File1_2, File2_1, File2_2, File3_1, File3_2
+} from '../assets/images';
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -73,7 +62,7 @@ const About = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="h-64 lg:h-auto relative overflow-hidden group">
                     <div className="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors z-10" />
-                    <img src={visionImg} alt="Our Vision" loading="lazy" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                    <ResponsiveImage image={vision} alt="Our Vision" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 1024px) 100vw, 50vw" />
                 </div>
                 <div className="bg-brand-black text-white p-12 lg:p-24 flex flex-col justify-center">
                     <motion.div
@@ -108,7 +97,7 @@ const About = () => {
                 </div>
                 <div className="h-64 lg:h-auto relative overflow-hidden group order-1 lg:order-2">
                     <div className="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition-colors z-10" />
-                    <img src={missionImg} alt="Our Mission" loading="lazy" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                    <ResponsiveImage image={mission} alt="Our Mission" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 1024px) 100vw, 50vw" />
                 </div>
             </div>
 
@@ -179,21 +168,21 @@ const About = () => {
                             {
                                 title: 'Corporate Solutions',
                                 desc: 'Comprehensive infrastructure and operational frameworks for modern enterprises.',
-                                image: infraImg,
+                                image: infra,
                                 colorHex: '#f97316', // Orange-500
                                 borderColor: 'border-orange-500'
                             },
                             {
                                 title: 'Internet And Tech',
                                 desc: 'Driven by our sub-brand LOF Industries—delivering advanced digital solutions.',
-                                image: techImg,
+                                image: tech,
                                 colorHex: '#6366f1', // Indigo-500
                                 borderColor: 'border-indigo-500'
                             },
                             {
                                 title: 'Business Consultancy',
                                 desc: 'Strategic guidance and asset management for sustainable growth.',
-                                image: capitalImg,
+                                image: capital,
                                 colorHex: '#10b981', // Emerald-500
                                 borderColor: 'border-emerald-500'
                             }
@@ -217,21 +206,21 @@ const About = () => {
                                             color={item.colorHex}
                                             items={[
                                                 <div className="w-full h-full overflow-hidden relative">
-                                                    <img
-                                                        src={index === 0 ? file1_1 : index === 1 ? file2_1 : file3_1}
+                                                    <ResponsiveImage
+                                                        image={index === 0 ? File1_1 : index === 1 ? File2_1 : File3_1}
                                                         alt={item.title}
                                                         className="w-full h-full object-cover"
                                                     />
                                                 </div>,
                                                 <div className="w-full h-full overflow-hidden relative">
-                                                    <img
-                                                        src={index === 0 ? file1_2 : index === 1 ? file2_2 : file3_2}
+                                                    <ResponsiveImage
+                                                        image={index === 0 ? File1_2 : index === 1 ? File2_2 : File3_2}
                                                         alt={item.title}
                                                         className="w-full h-full object-cover"
                                                     />
                                                 </div>,
                                                 <div className="w-full h-full overflow-hidden relative">
-                                                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                                                    <ResponsiveImage image={item.image} alt={item.title} className="w-full h-full object-cover" />
                                                 </div>
                                             ]}
                                         />

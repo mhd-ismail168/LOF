@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import globalMapImg from '../assets/global_network_map.png';
-import techImg from '../assets/tech.png';
+import ResponsiveImage from '../components/ResponsiveImage';
+import { global_network_map, tech } from '../assets/images';
 import SEO from '../components/SEO';
 import TextPressure from '../components/TextPressure';
 
@@ -138,7 +138,7 @@ const Company = () => {
                         >
                             <div className="relative group overflow-hidden rounded-2xl border border-white/10">
                                 <div className="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors z-10" />
-                                <img src={globalMapImg} alt="Global Export Network" loading="lazy" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                                <ResponsiveImage image={global_network_map} alt="Global Export Network" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 1024px) 100vw, 50vw" />
                             </div>
                             <div className="space-y-6">
                                 <span className="text-sector-infra font-mono text-sm tracking-widest uppercase font-bold">Global Logistics</span>
@@ -160,7 +160,7 @@ const Company = () => {
                         >
                             <div className="lg:order-2 relative group overflow-hidden rounded-2xl border border-white/10">
                                 <div className="absolute inset-0 bg-brand-dark/20 group-hover:bg-transparent transition-colors z-10" />
-                                <img src={techImg} alt="IT & Data Services" loading="lazy" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                                <ResponsiveImage image={tech} alt="IT & Data Services" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 1024px) 100vw, 50vw" />
                             </div>
                             <div className="lg:order-1 space-y-6">
                                 <div className="flex gap-4">
