@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 
 const Footer = () => {
@@ -29,14 +30,19 @@ const Footer = () => {
                     <div className="space-y-4">
                         <h4 className="text-lg font-heading text-white">Menu</h4>
                         <ul className="space-y-2 font-mono text-xs">
-                            {['Home', 'About', 'Company', 'Contact'].map((item) => (
-                                <li key={item}>
-                                    <button
-                                        onClick={() => scrollToSection(item.toLowerCase())}
-                                        className="hover:text-brand-accent transition-colors uppercase tracking-wider"
+                            {[
+                                { name: 'Home', path: '/' },
+                                { name: 'About', path: '/about' },
+                                { name: 'Company', path: '/company' },
+                                { name: 'Contact', path: '/contact' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link
+                                        to={item.path}
+                                        className="hover:text-brand-accent transition-colors uppercase tracking-wider block"
                                     >
-                                        {item}
-                                    </button>
+                                        {item.name}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

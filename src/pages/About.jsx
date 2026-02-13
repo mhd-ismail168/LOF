@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ResponsiveImage from '../components/ResponsiveImage';
+import SEO from '../components/SEO';
+import Folder from '../components/Folder';
 import {
     infra, tech, capital, vision, mission,
     File1_1, File1_2, File2_1, File2_2, File3_1, File3_2
