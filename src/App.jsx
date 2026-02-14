@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Layout from './components/Layout';
 import LoadingSpinner from './components/LoadingSpinner';
 import ErrorBoundary from './components/ErrorBoundary';
+import SplashScreen from './components/SplashScreen';
 
 // Lazy Load Pages
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Company = lazy(() => import('./pages/Company'));
 const Contact = lazy(() => import('./pages/Contact'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 
 // Scroll Handler Component
 const ScrollHandler = () => {
@@ -22,9 +24,14 @@ const ScrollHandler = () => {
 };
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
   return (
     <Router>
       <ScrollHandler />
+      {/* Splash Screen Overlay */}
+      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+
       <ErrorBoundary>
         <Layout>
           <Suspense fallback={<LoadingSpinner />}>
@@ -33,6 +40,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/company" element={<Company />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
               {/* SEO Routes that redirect/scroll to Home sections */}
               <Route path="/technology" element={<Home section="tech" />} />

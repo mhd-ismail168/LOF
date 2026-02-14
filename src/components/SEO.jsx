@@ -1,11 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({
-    title = "LOF Enterprises | Multi-Sector Technology, Logistics & Infrastructure Group",
-    description = "LOF Enterprises is a multi-sector conglomerate integrating technology, logistics, and real estate to build scalable infrastructure for the digital age.",
+    title = "LOF Industries | Multi-Sector Manufacturing, Technology & Logistics Group",
+    description = "LOF Industries is a multi-sector enterprise operating across manufacturing, technology, logistics, and infrastructure with global-scale operational capabilities.",
     canonical,
     type = 'website',
-    name = "LOF Enterprises",
+    name = "LOF Industries",
     image = "/logo_1.png"
 }) => {
     return (

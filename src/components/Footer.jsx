@@ -53,8 +53,8 @@ const Footer = () => {
                         <h4 className="text-lg font-heading text-white">Socials</h4>
                         <ul className="space-y-2 font-mono text-xs">
                             {[
-                                { name: 'LinkedIn', href: null },
-                                { name: 'Twitter / X', href: null },
+                                { name: 'LinkedIn', href: 'https://www.linkedin.com/in/samuel-dsouza-112213351?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+                                { name: 'Twitter / X', href: 'https://x.com/lofindustries?s=20' },
                                 { name: 'Instagram', href: 'https://www.instagram.com/samxdsouza?igsh=MXZ0cDdvcmVzd20wbg==' },
                                 { name: 'WhatsApp', href: 'https://wa.me/919995109484' }
                             ].map((item) => (
@@ -82,13 +82,16 @@ const Footer = () => {
                     <div className="space-y-4">
                         <h4 className="text-lg font-heading text-white">Legal</h4>
                         <ul className="space-y-2 font-mono text-xs">
-                            {['Privacy Policy', 'Terms of Service'].map((item) => (
-                                <li key={item}>
-                                    <a href="#" className="hover:text-brand-accent transition-colors uppercase tracking-wider">
-                                        {item}
-                                    </a>
-                                </li>
-                            ))}
+                            <li>
+                                <Link to="/privacy-policy" className="hover:text-brand-accent transition-colors uppercase tracking-wider">
+                                    Privacy Policy
+                                </Link>
+                            </li>
+                            <li>
+                                <span className="text-slate-600 uppercase tracking-wider cursor-not-allowed">
+                                    Terms of Service
+                                </span>
+                            </li>
                         </ul>
                     </div>
                 </div>

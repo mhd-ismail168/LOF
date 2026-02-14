@@ -72,7 +72,7 @@ const Layout = ({ children }) => {
                 sparkCount={8}
                 duration={0.4}
             />
-            <Navbar />
+            {location.pathname !== '/privacy-policy' && <Navbar />}
             <main className="w-full relative z-10">
                 {children}
 

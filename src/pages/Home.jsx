@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { ArrowRight, TrendingUp } from 'lucide-react';
 import ResponsiveImage from '../components/ResponsiveImage';
 import {
@@ -16,29 +17,29 @@ import PixelTransition from '../components/PixelTransition';
 const verticals = [
     {
         id: 'tech',
-        title: 'Technology Division',
+        title: 'Technology & Innovation',
         desc: 'Advanced Digital Infrastructure & AI Solutions',
         img: tech_1,
         color: 'from-blue-600/20 to-indigo-900/40' // Custom overlay tint
     },
     {
         id: 'logi',
-        title: 'Logistics & Transportation',
+        title: 'Logistics & Supply Chain',
         desc: 'Global Supply Chain & Freight Networks',
         img: logi_1,
         color: 'from-amber-600/20 to-orange-900/40'
     },
     {
-        id: 're',
-        title: 'Real Estate & Infrastructure',
-        desc: 'Premium Commercial & Residential Assets',
+        id: 'infra',
+        title: 'Infrastructure & Real Estate',
+        desc: 'Premium Commercial Assets & Smart Cities',
         img: LOF_1,
         color: 'from-emerald-600/20 to-green-900/40'
     },
     {
-        id: 'cap',
-        title: 'Strategic Investments',
-        desc: 'Venture Capital & Private Equity',
+        id: 'mfg',
+        title: 'Industrial Manufacturing',
+        desc: 'Next-Gen Manufacturing & Industrial Automation',
         img: capital,
         color: 'from-slate-600/20 to-slate-900/40'
     }
@@ -74,13 +75,13 @@ const Home = ({ section }) => {
     const getSEOData = () => {
         switch (section) {
             case 'tech':
-                return { title: 'Technology Division | LOF Enterprises', description: 'Advanced digital infrastructure, AI solutions, and enterprise-grade software ecosystems.' };
+                return { title: 'Technology & Innovation | LOF Industries', description: 'Advanced digital infrastructure, AI solutions, and enterprise-grade software ecosystems.' };
             case 'logi':
-                return { title: 'Logistics & Transportation | LOF Enterprises', description: 'Global supply chain optimization, freight networks, and predictive logistics engines.' };
-            case 're':
-                return { title: 'Real Estate & Infrastructure | LOF Enterprises', description: 'Premium commercial and residential assets integrated with smart city technologies.' };
-            case 'cap':
-                return { title: 'Strategic Investments | LOF Enterprises', description: 'Venture capital and private equity deploying patient capital into high-growth sectors.' };
+                return { title: 'Logistics & Supply Chain | LOF Industries', description: 'Global supply chain optimization, freight networks, and predictive logistics engines.' };
+            case 'infra':
+                return { title: 'Infrastructure & Real Estate | LOF Industries', description: 'Premium commercial and residential assets integrated with smart city technologies.' };
+            case 'mfg':
+                return { title: 'Industrial Manufacturing | LOF Industries', description: 'Next-generation manufacturing and industrial automation solutions.' };
             default:
                 return {
                     title: 'LOF Enterprises | Multi-Sector Technology, Logistics & Infrastructure Group',
@@ -95,24 +96,30 @@ const Home = ({ section }) => {
     const orgSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "LOF Enterprises",
-        "url": "https://lofenterprises.com", // Replace with actual URL
-        "logo": "https://lofenterprises.com/logo_1.png",
+        "name": "LOF Industries",
+        "url": "https://lofindustries.com",
+        "logo": "https://lofindustries.com/Logo.png",
         "founder": {
             "@type": "Person",
-            "name": "Samuel Anthony Dsouza"
+            "name": "Samuel Anthony Dsouza",
+            "jobTitle": "Industrialist"
         },
-        "description": "Multi-sector conglomerate specializing in Technology, Logistics, and Real Estate."
+        "description": "Multi-sector enterprise operating across manufacturing, technology, logistics, and infrastructure."
     };
 
     // Toggle bio-open class on body for CSS-based navbar hiding
     useEffect(() => {
         if (isArticleOpen) {
             document.body.classList.add('bio-open');
+            document.body.style.overflow = 'hidden';
         } else {
             document.body.classList.remove('bio-open');
+            document.body.style.overflow = 'unset';
         }
-        return () => document.body.classList.remove('bio-open');
+        return () => {
+            document.body.classList.remove('bio-open');
+            document.body.style.overflow = 'unset';
+        };
     }, [isArticleOpen]);
 
     // Auto-scroll Gallery Logic
@@ -274,6 +281,93 @@ const Home = ({ section }) => {
             {/* ---------------------------------------------------------------------------
                 2. BUSINESS VERTICALS (Unified Grid)
             --------------------------------------------------------------------------- */}
+            {/* ---------------------------------------------------------------------------
+                2. COMPANY MANIFESTO / DESCRIPTION (Redesigned - Premium Glass Card)
+            --------------------------------------------------------------------------- */}
+            <section className="py-24 px-6 md:px-12 lg:px-24 relative z-20 w-full overflow-hidden">
+                {/* Background Decor */}
+                <div className="absolute inset-0 z-0 opacity-20"
+                    style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, #14b8a6 1px, transparent 1px)', backgroundSize: '40px 40px' }}
+                ></div>
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-10%" }}
+                        transition={{ duration: 0.8 }}
+                        className="bg-white/5 border border-white/10 backdrop-blur-2xl rounded-3xl p-8 md:p-16 relative overflow-hidden group hover:border-brand-accent/30 transition-colors duration-500"
+                    >
+                        {/* Decorative Gradient Blob within card */}
+                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-accent/10 blur-[100px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/2" />
+
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                            {/* Headline Side */}
+                            <div className="text-left">
+                                <motion.div
+                                    initial={{ opacity: 0, x: -20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.2, duration: 0.8 }}
+                                >
+                                    <span className="text-brand-accent font-mono text-xs md:text-sm tracking-widest uppercase mb-4 block">
+                                        The Mandate
+                                    </span>
+                                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white mb-6 leading-[1.1] tracking-tight">
+                                        Pioneering Global <br />
+                                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-white">
+                                            Industrial Growth.
+                                        </span>
+                                    </h2>
+                                    <div className="w-20 h-1.5 bg-brand-accent rounded-full mb-8" />
+                                </motion.div>
+                            </div>
+
+                            {/* Content Side */}
+                            <div className="space-y-8 text-lg md:text-xl font-light leading-relaxed text-slate-300">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.4, duration: 0.8 }}
+                                    className="relative pl-6 border-l border-white/20"
+                                >
+                                    <h3 className="text-white font-bold text-xl mb-2 flex items-center gap-3">
+                                        LOF Enterprises
+                                        <span className="text-xs font-mono text-amber-400 uppercase tracking-wider py-1 px-2 border border-amber-500/20 bg-amber-500/10 rounded shadow-[0_0_10px_rgba(251,191,36,0.2)]">Parent</span>
+                                    </h3>
+                                    <p>
+                                        The visionary parent conglomerate, orchestrating a legacy of strategic investment and long-term value creation across global markets.
+                                    </p>
+                                </motion.div>
+
+                                <motion.div
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.6, duration: 0.8 }}
+                                    className="relative pl-6 border-l border-brand-accent"
+                                >
+                                    <h3 className="text-white font-bold text-xl mb-2 flex items-center gap-3">
+                                        LOF Industries
+                                        <span className="text-xs font-mono text-brand-accent uppercase tracking-wider py-1 px-2 border border-brand-accent/20 bg-brand-accent/10 rounded shadow-[0_0_10px_rgba(20,184,166,0.2)]">Subsidiary</span>
+                                    </h3>
+                                    <p className="mb-4">
+                                        Executing the vision through advanced manufacturing, next-gen technology, and resilient infrastructure.
+                                    </p>
+                                    <p className="text-sm font-normal text-slate-400 bg-black/20 p-4 rounded-lg border border-white/5">
+                                        Founded by <strong className="text-white">Samuel Dsouza</strong>, an <span className="text-brand-accent italic font-serif">Industrialist from Kerala</span>, bridging traditional strength with digital innovation.
+                                    </p>
+                                </motion.div>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* ---------------------------------------------------------------------------
+                3. BUSINESS VERTICALS (Unified Grid)
+            --------------------------------------------------------------------------- */}
             <section className="py-24 md:py-32 px-4 md:px-12 lg:px-24 relative z-10 w-full">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
@@ -393,6 +487,7 @@ const Home = ({ section }) => {
                             />
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -476,95 +571,98 @@ const Home = ({ section }) => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
-            {/* Article Modal / Side Panel */}
-            <AnimatePresence>
-                {isArticleOpen && (
-                    <>
-                        {/* Backdrop */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={() => setIsArticleOpen(false)}
-                            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[90]"
-                        />
+            {/* Article Modal / Side Panel - Portaled to Body */}
+            {createPortal(
+                <AnimatePresence>
+                    {isArticleOpen && (
+                        <>
+                            {/* Backdrop */}
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                onClick={() => setIsArticleOpen(false)}
+                                className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9990]"
+                            />
 
-                        {/* Side Panel */}
-                        <motion.div
-                            initial={{ x: "100%" }}
-                            animate={{ x: 0 }}
-                            exit={{ x: "100%" }}
-                            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                            className="fixed top-0 right-0 h-full w-full md:w-[600px] z-[100] shadow-2xl"
-                        >
-                            {/* Visual & Interactive Container */}
-                            <div className="relative h-full w-full bg-brand-dark/95 backdrop-blur-xl border-l border-white/10 flex flex-col">
+                            {/* Side Panel */}
+                            <motion.div
+                                initial={{ x: "100%" }}
+                                animate={{ x: 0 }}
+                                exit={{ x: "100%" }}
+                                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                                className="fixed top-0 right-0 h-full w-full md:w-[600px] z-[9999] shadow-2xl"
+                            >
+                                {/* Visual & Interactive Container */}
+                                <div className="relative h-full w-full bg-brand-dark/95 backdrop-blur-xl border-l border-white/10 flex flex-col">
 
-                                {/* Close Button (Chevron) */}
-                                <button
-                                    onClick={() => setIsArticleOpen(false)}
-                                    className="inline-flex items-center justify-center absolute z-[110] top-6 right-6 md:top-1/2 md:right-8 md:-translate-y-1/2 w-10 h-10 rounded-full bg-brand-accent text-white shadow-xl backdrop-blur-sm hover:scale-110 hover:bg-white hover:text-brand-black transition-all duration-300 border border-white/10"
-                                    aria-label="Close Article"
-                                >
-                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 6l12 12M6 18L18 6" />
-                                    </svg>
-                                </button>
+                                    {/* Close Button (Chevron) */}
+                                    <button
+                                        onClick={() => setIsArticleOpen(false)}
+                                        className="inline-flex items-center justify-center absolute z-[110] top-6 right-6 md:top-1/2 md:right-8 md:-translate-y-1/2 w-10 h-10 rounded-full bg-brand-accent text-white shadow-xl backdrop-blur-sm hover:scale-110 hover:bg-white hover:text-brand-black transition-all duration-300 border border-white/10"
+                                        aria-label="Close Article"
+                                    >
+                                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 6l12 12M6 18L18 6" />
+                                        </svg>
+                                    </button>
 
 
 
-                                {/* Scrollable Content */}
-                                <div className="flex-1 overflow-y-auto p-8 md:p-12">
-                                    <div className="mt-16 md:mt-0">
-                                        <div>
-                                            <span className="text-brand-accent font-mono text-sm tracking-widest uppercase block mb-3">The Founder</span>
-                                            <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight header-pressure">
-                                                Building a <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-white">Legacy.</span>
-                                            </h2>
-                                        </div>
+                                    {/* Scrollable Content */}
+                                    <div className="flex-1 overflow-y-auto p-8 md:p-12">
+                                        <div className="mt-16 md:mt-0">
+                                            <div>
+                                                <span className="text-brand-accent font-mono text-sm tracking-widest uppercase block mb-3">The Founder</span>
+                                                <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight header-pressure">
+                                                    Building a <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-white">Legacy.</span>
+                                                </h2>
+                                            </div>
 
-                                        <div className="space-y-6 text-lg text-slate-300 font-light leading-relaxed">
-                                            <p>
-                                                <strong className="text-white font-bold">Samuel Anthony Dsouza</strong> is a young entrepreneur who began his journey at the age of 16, guided by early exposure to business and the support of his father. With a naturally studious, analytical, and intellectually driven mindset, he gravitated toward business strategy, technology, and emerging industries from a very young age.
-                                            </p>
-                                            <p>
-                                                Largely self-taught, Samuel developed hands-on expertise across IT infrastructure, hardware trading, networking, and modern technology ecosystems, including AI-driven solutions. This curiosity and discipline led him to build and operate multiple ventures within the IT industry, scaling operations with a sharp focus on efficiency, market timing, and value creation.
-                                            </p>
-                                            <div className="p-6 bg-white/5 border-l-2 border-brand-accent rounded-r-lg my-8">
-                                                <p className="text-white italic">
-                                                    "A conglomerate built on innovation, speed, and strategic foresight."
+                                            <div className="space-y-6 text-lg text-slate-300 font-light leading-relaxed">
+                                                <p>
+                                                    <strong className="text-white font-bold">Samuel Anthony Dsouza</strong> is a young entrepreneur who began his journey at the age of 16, guided by early exposure to business and the support of his father. With a naturally studious, analytical, and intellectually driven mindset, he gravitated toward business strategy, technology, and emerging industries from a very young age.
+                                                </p>
+                                                <p>
+                                                    Largely self-taught, Samuel developed hands-on expertise across IT infrastructure, hardware trading, networking, and modern technology ecosystems, including AI-driven solutions. This curiosity and discipline led him to build and operate multiple ventures within the IT industry, scaling operations with a sharp focus on efficiency, market timing, and value creation.
+                                                </p>
+                                                <div className="p-6 bg-white/5 border-l-2 border-brand-accent rounded-r-lg my-8">
+                                                    <p className="text-white italic">
+                                                        "A conglomerate built on innovation, speed, and strategic foresight."
+                                                    </p>
+                                                </div>
+                                                <p>
+                                                    He is the founder of <strong className="text-white font-bold">LOF Enterprises</strong>, the parent organization overseeing a growing portfolio of ventures including LOF Industries, LOF Media, and LOF Real Estate, with future expansions planned in FinTech, data center, logistics, and investment-led businesses. Together, these ventures have contributed to a measurable global footprint in the IT procurement and resale market.
+                                                </p>
+                                                <p>
+                                                    Beyond operations, Samuel actively explores strategic investments across real estate, logistics, and emerging business models, positioning himself as an early-stage investor with a long-term vision. At just 21 years of age(as of 2026), he represents a new generation of founders—combining self-learning, execution, and foresight—driven to shape future financial markets and build enduring enterprises with global relevance.
                                                 </p>
                                             </div>
-                                            <p>
-                                                He is the founder of <strong className="text-white font-bold">LOF Enterprises</strong>, the parent organization overseeing a growing portfolio of ventures including LOF Industries, LOF Media, and LOF Real Estate, with future expansions planned in FinTech, data center, logistics, and investment-led businesses. Together, these ventures have contributed to a measurable global footprint in the IT procurement and resale market.
-                                            </p>
-                                            <p>
-                                                Beyond operations, Samuel actively explores strategic investments across real estate, logistics, and emerging business models, positioning himself as an early-stage investor with a long-term vision. At just 21 years of age, he represents a new generation of founders—combining self-learning, execution, and foresight—driven to shape future financial markets and build enduring enterprises with global relevance.
-                                            </p>
-                                        </div>
 
-                                        <div className="pt-12 mt-12 border-t border-white/10">
-                                            <ResponsiveImage image={Founder_2} alt="Signature" className="h-24 opacity-50 mb-4 object-contain object-left" />
-                                            <p className="font-mono text-xs text-slate-500 uppercase tracking-widest">Founder & Chairman, LOF Enterprises</p>
-                                        </div>
+                                            <div className="pt-12 mt-12 border-t border-white/10">
+                                                <ResponsiveImage image={Founder_2} alt="Signature" className="h-24 opacity-50 mb-4 object-contain object-left" />
+                                                <p className="font-mono text-xs text-slate-500 uppercase tracking-widest">Founder & Chairman, LOF Enterprises</p>
+                                            </div>
 
-                                        {/* Mobile Bottom Back Button */}
-                                        <button
-                                            onClick={() => setIsArticleOpen(false)}
-                                            className="md:hidden w-auto px-12 mx-auto block mt-12 py-4 bg-white/10 border border-white/10 text-white font-bold uppercase tracking-widest rounded-sm hover:bg-brand-accent transition-colors"
-                                        >
-                                            Go Back
-                                        </button>
+                                            {/* Mobile Bottom Back Button */}
+                                            <button
+                                                onClick={() => setIsArticleOpen(false)}
+                                                className="md:hidden w-auto px-12 mx-auto block mt-12 py-4 bg-white/10 border border-white/10 text-white font-bold uppercase tracking-widest rounded-sm hover:bg-brand-accent transition-colors"
+                                            >
+                                                Go Back
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </motion.div>
-                    </>
-                )}
-            </AnimatePresence>
-        </div>
+                            </motion.div>
+                        </>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
+        </div >
     );
 };
 
