@@ -84,8 +84,8 @@ const Home = ({ section }) => {
                 return { title: 'Industrial Manufacturing | LOF Industries', description: 'Next-generation manufacturing and industrial automation solutions.' };
             default:
                 return {
-                    title: 'LOF Enterprises | Multi-Sector Technology, Logistics & Infrastructure Group',
-                    description: 'LOF Enterprises is a multi-sector conglomerate integrating technology, logistics, and real estate to build scalable infrastructure for the digital age.'
+                    title: 'LOF Industries | Multi-Sector Manufacturing, Technology & Logistics Group',
+                    description: 'LOF Industries is a multi-sector enterprise operating across manufacturing, technology, logistics, and infrastructure with global-scale operational capabilities.'
                 };
         }
     };
@@ -337,7 +337,7 @@ const Home = ({ section }) => {
                                         <span className="text-xs font-mono text-amber-400 uppercase tracking-wider py-1 px-2 border border-amber-500/20 bg-amber-500/10 rounded shadow-[0_0_10px_rgba(251,191,36,0.2)]">Parent</span>
                                     </h3>
                                     <p>
-                                        The visionary parent conglomerate, orchestrating a legacy of strategic investment and long-term value creation across global markets.
+                                        The visionary parent conglomerate, orchestrating a legacy of strategic investment and long-term value creation across global markets. LOF Enterprises sets the strategic direction, ensuring sustainable growth and diversified portfolio management.
                                     </p>
                                 </motion.div>
 
@@ -353,10 +353,10 @@ const Home = ({ section }) => {
                                         <span className="text-xs font-mono text-brand-accent uppercase tracking-wider py-1 px-2 border border-brand-accent/20 bg-brand-accent/10 rounded shadow-[0_0_10px_rgba(20,184,166,0.2)]">Subsidiary</span>
                                     </h3>
                                     <p className="mb-4">
-                                        Executing the vision through advanced manufacturing, next-gen technology, and resilient infrastructure.
+                                        Executing the vision through advanced manufacturing, next-gen technology, and resilient infrastructure. We deliver end-to-end industrial solutions that drive efficiency, scalability, and innovation. From smart factories to global logistics networks, LOF Industries is at the forefront of the industrial revolution.
                                     </p>
                                     <p className="text-sm font-normal text-slate-400 bg-black/20 p-4 rounded-lg border border-white/5">
-                                        Founded by <strong className="text-white">Samuel Dsouza</strong>, an <span className="text-brand-accent italic font-serif">Industrialist from Kerala</span>, bridging traditional strength with digital innovation.
+                                        Founded by <strong className="text-white">Samuel Dsouza</strong>, an <span className="text-brand-accent italic font-serif">Industrialist from Kerala</span>, bridging traditional strength with digital innovation to create a robust industrial ecosystem.
                                     </p>
                                 </motion.div>
                             </div>
