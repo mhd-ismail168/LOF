@@ -8,12 +8,16 @@ const SEO = ({
     name = "LOF Industries",
     image = "/logo_1.png"
 }) => {
+    const baseUrl = 'https://lofindustries.com';
+    const currentPath = window.location.pathname;
+    const cleanCanonical = canonical || `${baseUrl}${currentPath === '/' ? '' : currentPath}`.replace(/\/$/, '');
+
     return (
         <Helmet>
             {/* Standard metadata tags */}
             <title>{title}</title>
             <meta name='description' content={description} />
-            <link rel="canonical" href={canonical || window.location.href} />
+            <link rel="canonical" href={cleanCanonical} />
 
             {/* End standard metadata tags */}
 

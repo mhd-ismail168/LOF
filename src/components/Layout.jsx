@@ -3,6 +3,7 @@ import Footer from './Footer';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import ClickSpark from './ClickSpark';
 import globalNetworkMap from '../assets/global_network_map.png';
 import DotGrid from './DotGrid';
@@ -42,7 +43,7 @@ const NextPageNavigator = () => {
 };
 
 const Layout = ({ children }) => {
-    const location = useLocation(); // Added useLocation hook
+    const location = useLocation();
 
     return (
         <div className="min-h-screen bg-brand-dark text-slate-300 relative selection:bg-brand-accent selection:text-brand-dark">

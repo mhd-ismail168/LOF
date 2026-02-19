@@ -356,7 +356,7 @@ const Home = ({ section }) => {
                                         Executing the vision through advanced manufacturing, next-gen technology, and resilient infrastructure. We deliver end-to-end industrial solutions that drive efficiency, scalability, and innovation. From smart factories to global logistics networks, LOF Industries is at the forefront of the industrial revolution.
                                     </p>
                                     <p className="text-sm font-normal text-slate-400 bg-black/20 p-4 rounded-lg border border-white/5">
-                                        Founded by <strong className="text-white">Samuel Dsouza</strong>, an <span className="text-brand-accent italic font-serif">Industrialist from Kerala</span>, bridging traditional strength with digital innovation to create a robust industrial ecosystem.
+                                        Founded by <strong className="text-white">Samuel Dsouza</strong>, an <span className="text-brand-accent italic font-serif">Industrialist from Mumbai</span>, bridging traditional strength with digital innovation to create a robust industrial ecosystem.
                                     </p>
                                 </motion.div>
                             </div>
