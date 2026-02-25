@@ -126,40 +126,23 @@ const Home = ({ section }) => {
     useEffect(() => {
         const scrollContainer = scrollRef.current;
         if (!scrollContainer) return;
+
         let animationFrameId;
-        let singleWidth = Math.max(1, scrollContainer.scrollWidth / 2);
 
-        const updateSingleWidth = () => {
-            // Recompute available width for one set (we duplicate images)
-            singleWidth = Math.max(1, scrollContainer.scrollWidth / 2);
-        };
-
-        const handleResize = () => updateSingleWidth();
-        window.addEventListener('resize', handleResize);
-
-        const speed = 0.6; // pixels per frame (smooth and subtle)
-
-        const step = () => {
+        const scroll = () => {
             if (!isPaused) {
-                // Advance
-                scrollContainer.scrollLeft += speed;
-
-                // When we've moved one set's width, wrap back without jump
-                if (scrollContainer.scrollLeft >= singleWidth) {
-                    // subtract singleWidth to keep position continuous
-                    scrollContainer.scrollLeft -= singleWidth;
+                if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+                    scrollContainer.scrollLeft = 0;
+                } else {
+                    scrollContainer.scrollLeft += 1;
                 }
             }
-            animationFrameId = requestAnimationFrame(step);
+            animationFrameId = requestAnimationFrame(scroll);
         };
 
-        updateSingleWidth();
-        animationFrameId = requestAnimationFrame(step);
+        animationFrameId = requestAnimationFrame(scroll);
 
-        return () => {
-            cancelAnimationFrame(animationFrameId);
-            window.removeEventListener('resize', handleResize);
-        };
+        return () => cancelAnimationFrame(animationFrameId);
     }, [isPaused]);
 
     return (
