@@ -1,19 +1,7 @@
 {
     "cleanUrls": true,
     "trailingSlash": false,
-    "redirects": [
-        {
-            "source": "/(.*)",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "www.lofindustries.com"
-                }
-            ],
-            "destination": "https://lofindustries.com/$1",
-            "permanent": true
-        }
-    ],
+    
     "rewrites": [
         {
             "source": "/(about|company|contact|privacy-policy|technology|logistics|real-estate|investments)",
