@@ -5,7 +5,7 @@ import { ArrowRight, TrendingUp } from 'lucide-react';
 import ResponsiveImage from '../components/ResponsiveImage';
 import {
     tech_1, logi_1, LOF_1, capital,
-    Founder_1, Founder_2, Global_supp,
+    Founder_1, Founder_2, home_img, Global_supp,
     tech_2, logi_2, LOF_2
 } from '../assets/images';
 import SEO from '../components/SEO';
@@ -265,7 +265,7 @@ const Home = ({ section }) => {
                         >
                             {/* Image */}
                             <ResponsiveImage
-                                image={Founder_2}
+                                image={home_img}
                                 alt="Founder"
                                 className="h-full w-auto object-contain object-center opacity-90"
                                 sizes="(max-width: 768px) 100vw, 50vw"

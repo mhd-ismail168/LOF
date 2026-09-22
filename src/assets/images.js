@@ -55,12 +55,10 @@ import Founder_2_avif_sm from '../assets/optimized/Founder_2-sm.avif';
 import Founder_2_avif_lg from '../assets/optimized/Founder_2-lg.avif';
 import Founder_2_webp_sm from '../assets/optimized/Founder_2-sm.webp';
 import Founder_2_webp_lg from '../assets/optimized/Founder_2-lg.webp';
-import Founder_hero_original from '../assets/Founder_hero.PNG';
+import Founder_hero_original from '../assets/Founder_hero.jpg';
 import Founder_hero_avif_sm from '../assets/optimized/Founder_hero-sm.avif';
-import Founder_hero_avif_md from '../assets/optimized/Founder_hero-md.avif';
 import Founder_hero_avif_lg from '../assets/optimized/Founder_hero-lg.avif';
 import Founder_hero_webp_sm from '../assets/optimized/Founder_hero-sm.webp';
-import Founder_hero_webp_md from '../assets/optimized/Founder_hero-md.webp';
 import Founder_hero_webp_lg from '../assets/optimized/Founder_hero-lg.webp';
 import global_network_map_original from '../assets/global_network_map.png';
 import global_network_map_avif_sm from '../assets/optimized/global_network_map-sm.avif';
@@ -76,6 +74,11 @@ import Global_supp_avif_lg from '../assets/optimized/Global_supp-lg.avif';
 import Global_supp_webp_sm from '../assets/optimized/Global_supp-sm.webp';
 import Global_supp_webp_md from '../assets/optimized/Global_supp-md.webp';
 import Global_supp_webp_lg from '../assets/optimized/Global_supp-lg.webp';
+import home_img_original from '../assets/home_img.jpeg';
+import home_img_avif_sm from '../assets/optimized/home_img-sm.avif';
+import home_img_avif_lg from '../assets/optimized/home_img-lg.avif';
+import home_img_webp_sm from '../assets/optimized/home_img-sm.webp';
+import home_img_webp_lg from '../assets/optimized/home_img-lg.webp';
 import infra_original from '../assets/infra.png';
 import infra_avif_sm from '../assets/optimized/infra-sm.avif';
 import infra_avif_lg from '../assets/optimized/infra-lg.avif';
@@ -231,8 +234,8 @@ export const Founder_2 = {
 export const Founder_hero = {
     src: Founder_hero_original,
     srcSet: {
-        avif: `${Founder_hero_avif_sm} 640w, ${Founder_hero_avif_md} 1024w, ${Founder_hero_avif_lg} 1920w`,
-        webp: `${Founder_hero_webp_sm} 640w, ${Founder_hero_webp_md} 1024w, ${Founder_hero_webp_lg} 1920w`
+        avif: `${Founder_hero_avif_sm} 640w, ${Founder_hero_avif_lg} 1920w`,
+        webp: `${Founder_hero_webp_sm} 640w, ${Founder_hero_webp_lg} 1920w`
     },
     alt: "Founder hero"
 };
@@ -253,6 +256,15 @@ export const Global_supp = {
         webp: `${Global_supp_webp_sm} 640w, ${Global_supp_webp_md} 1024w, ${Global_supp_webp_lg} 1920w`
     },
     alt: "Global supp"
+};
+
+export const home_img = {
+    src: home_img_original,
+    srcSet: {
+        avif: `${home_img_avif_sm} 640w, ${home_img_avif_lg} 1920w`,
+        webp: `${home_img_webp_sm} 640w, ${home_img_webp_lg} 1920w`
+    },
+    alt: "home img"
 };
 
 export const infra = {
