@@ -243,7 +243,7 @@ const Home = ({ section }) => {
                             </div>
                             <div className="flex flex-col text-left">
                                 <span className="text-white font-heading font-bold text-2xl md:text-3xl tracking-tight leading-none mb-1">
-                                    Rs. 3 Crore<span className="text-brand-accent">+</span>
+                                    Rs. 30 Million<span className="text-brand-accent">+</span>
                                 </span>
                                 <span className="text-slate-400 font-mono text-xs tracking-wider uppercase">Turnover FY 25-26</span>
                             </div>
