@@ -5,7 +5,7 @@ import { ArrowRight, TrendingUp } from 'lucide-react';
 import ResponsiveImage from '../components/ResponsiveImage';
 import {
     tech_1, logi_1, LOF_1, capital,
-    Founder_1, Founder_2, home_img, Global_supp,
+    Founder_1, Founder_2, home2_img, Global_supp,
     tech_2, logi_2, LOF_2
 } from '../assets/images';
 import SEO from '../components/SEO';
@@ -195,9 +195,9 @@ const Home = ({ section }) => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="mb-4 md:mb-8 -mt-12 md:mt-0 relative z-30"
+                            className="mb-6 md:mb-10 -mt-12 md:mt-0 relative z-30"
                         >
-                            <span className="text-brand-accent font-mono text-base tracking-[0.25em] uppercase font-semibold bg-brand-black/50 backdrop-blur-sm px-2 py-1 rounded-md">
+                            <span className="text-brand-accent font-mono text-base md:text-lg tracking-[0.3em] uppercase font-bold bg-brand-black/60 backdrop-blur-sm px-4 py-2 rounded-lg border border-brand-accent/25 shadow-lg">
                                 Visionary • Entrepreneur
                             </span>
                         </motion.div>
@@ -208,7 +208,7 @@ const Home = ({ section }) => {
                                 initial={{ opacity: 0, x: -50 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8, delay: 0.4 }}
-                                className="block text-[5rem] md:text-[7rem] lg:text-[11rem]"
+                                className="block text-[5.5rem] md:text-[8rem] lg:text-[11.5rem]"
                             >
                                 LOF
                             </motion.span>
@@ -216,7 +216,7 @@ const Home = ({ section }) => {
                                 initial={{ opacity: 0, x: -50 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8, delay: 0.6 }}
-                                className="block text-slate-500 text-[3.5rem] md:text-[5rem] lg:text-[7rem]"
+                                className="block text-slate-500 text-[3.8rem] md:text-[5.5rem] lg:text-[7.5rem]"
                             >
                                 ENTERPRISES
                             </motion.span>
@@ -227,25 +227,25 @@ const Home = ({ section }) => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1, delay: 0.8 }}
-                            className="text-slate-400 text-lg md:text-2xl font-light max-w-xl leading-relaxed border-l-2 border-white/10 pl-8"
+                            className="text-slate-300 text-xl md:text-3xl font-light max-w-2xl leading-relaxed border-l-2 border-brand-accent/40 pl-8"
                         >
-                            Reshaping the future of <RotatingText texts={['Technology', 'Logistics', 'Real Estate', 'Capital']} mainClassName="px-2 text-brand-accent overflow-hidden py-0.5 justify-center rounded-lg bg-brand-accent/10 min-w-[140px] md:min-w-[180px] text-center" staggerFrom="last" initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "-120%" }} transition={{ type: "spring", damping: 30, stiffness: 400 }} rotationInterval={2000} /> through speed and strategic foresight.
+                            Reshaping the future of <RotatingText texts={['Technology', 'Logistics', 'Real Estate', 'Capital']} mainClassName="px-3 text-brand-accent overflow-hidden py-1 justify-center rounded-lg bg-brand-accent/15 min-w-[160px] md:min-w-[210px] text-center font-medium" staggerFrom="last" initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "-120%" }} transition={{ type: "spring", damping: 30, stiffness: 400 }} rotationInterval={2000} /> through speed and strategic foresight.
                         </motion.p>
 
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, delay: 1 }}
-                            className="mt-10 inline-flex items-center gap-4 px-8 py-4 bg-white/5 border border-brand-accent/50 rounded-2xl backdrop-blur-xl shadow-[0_0_30px_rgba(20,184,166,0.15)] hover:shadow-[0_0_50px_rgba(20,184,166,0.3)] hover:border-brand-accent transition-all duration-500 group cursor-default"
+                            className="mt-10 inline-flex items-center gap-5 px-9 py-5 bg-white/5 border border-brand-accent/50 rounded-2xl backdrop-blur-xl shadow-[0_0_30px_rgba(194,65,12,0.15)] hover:shadow-[0_0_50px_rgba(194,65,12,0.3)] hover:border-brand-accent transition-all duration-500 group cursor-default"
                         >
-                            <div className="p-2 bg-brand-accent/20 rounded-full text-brand-accent group-hover:scale-110 transition-transform duration-500">
-                                <TrendingUp size={24} />
+                            <div className="p-2.5 bg-brand-accent/20 rounded-full text-brand-accent group-hover:scale-110 transition-transform duration-500">
+                                <TrendingUp size={28} />
                             </div>
                             <div className="flex flex-col text-left">
-                                <span className="text-white font-heading font-bold text-2xl md:text-3xl tracking-tight leading-none mb-1">
+                                <span className="text-white font-heading font-bold text-3xl md:text-4xl tracking-tight leading-none mb-1.5">
                                     Rs. 30 Million<span className="text-brand-accent">+</span>
                                 </span>
-                                <span className="text-slate-400 font-mono text-xs tracking-wider uppercase">Turnover FY 25-26</span>
+                                <span className="text-slate-400 font-mono text-sm md:text-base tracking-wider uppercase">Turnover FY 25-26</span>
                             </div>
                         </motion.div>
                     </div>
@@ -265,7 +265,7 @@ const Home = ({ section }) => {
                         >
                             {/* Image */}
                             <ResponsiveImage
-                                image={home_img}
+                                image={home2_img}
                                 alt="Founder"
                                 className="h-full w-auto object-contain object-center opacity-90"
                                 sizes="(max-width: 768px) 100vw, 50vw"

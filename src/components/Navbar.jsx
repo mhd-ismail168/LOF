@@ -93,7 +93,7 @@ const Navbar = () => {
                                     <button
                                         key={link.label}
                                         onClick={() => handleNavigation(link.href)}
-                                        className={`w-full text-left px-4 py-3 rounded-xl transition-colors text-sm font-bold ${location.pathname === link.href
+                                        className={`w-full text-left px-5 py-3.5 rounded-xl transition-colors text-base font-semibold ${location.pathname === link.href
                                             ? 'bg-brand-accent text-white'
                                             : 'text-slate-300 hover:bg-white/5'
                                             }`}

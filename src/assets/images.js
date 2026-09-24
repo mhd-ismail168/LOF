@@ -81,6 +81,13 @@ import home1_img_avif_lg from '../assets/optimized/home1_img-lg.avif';
 import home1_img_webp_sm from '../assets/optimized/home1_img-sm.webp';
 import home1_img_webp_md from '../assets/optimized/home1_img-md.webp';
 import home1_img_webp_lg from '../assets/optimized/home1_img-lg.webp';
+import home2_img_original from '../assets/home2_img.png';
+import home2_img_avif_sm from '../assets/optimized/home2_img-sm.avif';
+import home2_img_avif_md from '../assets/optimized/home2_img-md.avif';
+import home2_img_avif_lg from '../assets/optimized/home2_img-lg.avif';
+import home2_img_webp_sm from '../assets/optimized/home2_img-sm.webp';
+import home2_img_webp_md from '../assets/optimized/home2_img-md.webp';
+import home2_img_webp_lg from '../assets/optimized/home2_img-lg.webp';
 import home_img_original from '../assets/home_img.jpeg';
 import home_img_avif_sm from '../assets/optimized/home_img-sm.avif';
 import home_img_avif_lg from '../assets/optimized/home_img-lg.avif';
@@ -272,6 +279,15 @@ export const home1_img = {
         webp: `${home1_img_webp_sm} 640w, ${home1_img_webp_md} 1024w, ${home1_img_webp_lg} 1920w`
     },
     alt: "home1 img"
+};
+
+export const home2_img = {
+    src: home2_img_original,
+    srcSet: {
+        avif: `${home2_img_avif_sm} 640w, ${home2_img_avif_md} 1024w, ${home2_img_avif_lg} 1920w`,
+        webp: `${home2_img_webp_sm} 640w, ${home2_img_webp_md} 1024w, ${home2_img_webp_lg} 1920w`
+    },
+    alt: "home2 img"
 };
 
 export const home_img = {
