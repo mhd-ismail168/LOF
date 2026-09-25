@@ -88,6 +88,11 @@ import home2_img_avif_lg from '../assets/optimized/home2_img-lg.avif';
 import home2_img_webp_sm from '../assets/optimized/home2_img-sm.webp';
 import home2_img_webp_md from '../assets/optimized/home2_img-md.webp';
 import home2_img_webp_lg from '../assets/optimized/home2_img-lg.webp';
+import home3_img_original from '../assets/home3_img.png';
+import home3_img_avif_sm from '../assets/optimized/home3_img-sm.avif';
+import home3_img_avif_lg from '../assets/optimized/home3_img-lg.avif';
+import home3_img_webp_sm from '../assets/optimized/home3_img-sm.webp';
+import home3_img_webp_lg from '../assets/optimized/home3_img-lg.webp';
 import home_img_original from '../assets/home_img.jpeg';
 import home_img_avif_sm from '../assets/optimized/home_img-sm.avif';
 import home_img_avif_lg from '../assets/optimized/home_img-lg.avif';
@@ -159,6 +164,11 @@ import vision_avif_lg from '../assets/optimized/vision-lg.avif';
 import vision_webp_sm from '../assets/optimized/vision-sm.webp';
 import vision_webp_md from '../assets/optimized/vision-md.webp';
 import vision_webp_lg from '../assets/optimized/vision-lg.webp';
+import vision_img_original from '../assets/vision_img.jpeg';
+import vision_img_avif_sm from '../assets/optimized/vision_img-sm.avif';
+import vision_img_avif_lg from '../assets/optimized/vision_img-lg.avif';
+import vision_img_webp_sm from '../assets/optimized/vision_img-sm.webp';
+import vision_img_webp_lg from '../assets/optimized/vision_img-lg.webp';
 import Whats_logo_original from '../assets/Whats_logo.png';
 import Whats_logo_avif_lg from '../assets/optimized/Whats_logo-lg.avif';
 import Whats_logo_webp_lg from '../assets/optimized/Whats_logo-lg.webp';
@@ -290,6 +300,15 @@ export const home2_img = {
     alt: "home2 img"
 };
 
+export const home3_img = {
+    src: home3_img_original,
+    srcSet: {
+        avif: `${home3_img_avif_sm} 640w, ${home3_img_avif_lg} 1920w`,
+        webp: `${home3_img_webp_sm} 640w, ${home3_img_webp_lg} 1920w`
+    },
+    alt: "home3 img"
+};
+
 export const home_img = {
     src: home_img_original,
     srcSet: {
@@ -405,6 +424,15 @@ export const vision = {
         webp: `${vision_webp_sm} 640w, ${vision_webp_md} 1024w, ${vision_webp_lg} 1920w`
     },
     alt: "vision"
+};
+
+export const vision_img = {
+    src: vision_img_original,
+    srcSet: {
+        avif: `${vision_img_avif_sm} 640w, ${vision_img_avif_lg} 1920w`,
+        webp: `${vision_img_webp_sm} 640w, ${vision_img_webp_lg} 1920w`
+    },
+    alt: "vision img"
 };
 
 export const Whats_logo = {
