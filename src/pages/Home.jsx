@@ -59,6 +59,42 @@ const Home = ({ section }) => {
     const scrollRef = useRef(null);
     const [isArticleOpen, setIsArticleOpen] = useState(false);
     const [isPaused, setIsPaused] = useState(false);
+    const pauseTimeoutRef = useRef(null);
+
+    const handleInteractionStart = () => {
+        setIsPaused(true);
+        if (pauseTimeoutRef.current) {
+            clearTimeout(pauseTimeoutRef.current);
+        }
+    };
+
+    const handleInteractionEnd = () => {
+        if (pauseTimeoutRef.current) {
+            clearTimeout(pauseTimeoutRef.current);
+        }
+        pauseTimeoutRef.current = setTimeout(() => {
+            setIsPaused(false);
+        }, 1500);
+    };
+
+    const handleScroll = () => {
+        if (isPaused) {
+            if (pauseTimeoutRef.current) {
+                clearTimeout(pauseTimeoutRef.current);
+            }
+            pauseTimeoutRef.current = setTimeout(() => {
+                setIsPaused(false);
+            }, 1000);
+        }
+    };
+
+    useEffect(() => {
+        return () => {
+            if (pauseTimeoutRef.current) {
+                clearTimeout(pauseTimeoutRef.current);
+            }
+        };
+    }, []);
 
     // Scroll to section based on prop
     useEffect(() => {
@@ -543,11 +579,14 @@ const Home = ({ section }) => {
                         <div className="lg:w-[65%] relative group/gallery overflow-hidden mask-linear-fade">
                             <div
                                 ref={scrollRef}
-                                className="flex gap-4 items-center overflow-x-auto hide-scrollbar scroll-smooth"
-                                onMouseEnter={() => setIsPaused(true)}
-                                onMouseLeave={() => setIsPaused(false)}
-                                onTouchStart={() => setIsPaused(true)}
-                                onTouchEnd={() => setIsPaused(false)}
+                                className="flex gap-4 items-center overflow-x-auto hide-scrollbar touch-pan-x"
+                                style={{ WebkitOverflowScrolling: 'touch' }}
+                                onMouseEnter={handleInteractionStart}
+                                onMouseLeave={handleInteractionEnd}
+                                onTouchStart={handleInteractionStart}
+                                onTouchEnd={handleInteractionEnd}
+                                onTouchCancel={handleInteractionEnd}
+                                onScroll={handleScroll}
                             >
                                 {[...galleryImages, ...galleryImages].map((img, idx) => (
                                     <div
