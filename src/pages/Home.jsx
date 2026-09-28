@@ -6,7 +6,8 @@ import ResponsiveImage from '../components/ResponsiveImage';
 import {
     tech_1, logi_1, LOF_1, capital,
     Founder_1, Founder_2, home2_img, home3_img, Global_supp,
-    tech_2, logi_2, LOF_2, vision_img
+    tech_2, logi_2, LOF_2, vision_img,
+    home_img
 } from '../assets/images';
 import SEO from '../components/SEO';
 import TextPressure from '../components/TextPressure';
@@ -642,7 +643,7 @@ const Home = ({ section }) => {
                                             </div>
 
                                             <div className="pt-12 mt-12 border-t border-white/10">
-                                                <ResponsiveImage image={home3_img} alt="Samuel Anthony Dsouza" className="h-28 w-20 rounded-md object-cover object-top shadow-lg border border-white/10 mb-4" />
+                                                <ResponsiveImage image={home_img} alt="Samuel Anthony Dsouza" className="h-28 w-20 rounded-md object-cover object-top shadow-lg border border-white/10 mb-4" />
                                                 <p className="font-mono text-xs text-slate-500 uppercase tracking-widest">Founder & Chairman, LOF Enterprises</p>
                                             </div>
 
