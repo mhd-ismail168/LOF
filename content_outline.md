@@ -1,4 +1,4 @@
-# Content Outline - LOF Enterprises
+# Content Outline - LOF Enterprises Pvt Ltd
 
 ## 1. Home Page
 **Theme:** "The Visionary"
@@ -6,7 +6,7 @@
 
 *   **Hero Section:**
     *   **Tagline:** "Reshaping the future of technology, logistics, and real estate."
-    *   **Headline:** "LOF ENTERPRISES"
+    *   **Headline:** "LOF ENTERPRISES Pvt Ltd"
     *   **Action:** "Our Portfolio" & "Contact Us" buttons.
     *   **Visuals:** Animated background, scroll indicator.
 

@@ -217,9 +217,12 @@ const Home = ({ section }) => {
                                 initial={{ opacity: 0, x: -50 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8, delay: 0.6 }}
-                                className="block text-slate-500 text-[3.8rem] md:text-[5.5rem] lg:text-[7.5rem]"
+                                className="block text-slate-500 text-[3.8rem] md:text-[5.5rem] lg:text-[7.5rem] leading-[1]"
                             >
-                                ENTERPRISES
+                                <span className="flex flex-wrap items-baseline gap-x-4">
+                                    <span>ENTERPRISES</span>
+                                    <span className="text-[2rem] md:text-[3.5rem] lg:text-[4.5rem] font-medium tracking-normal text-slate-400">Pvt Ltd</span>
+                                </span>
                             </motion.span>
                         </h1>
 
@@ -334,11 +337,11 @@ const Home = ({ section }) => {
                                     className="relative pl-6 border-l border-white/20"
                                 >
                                     <h3 className="text-white font-bold text-xl mb-2 flex items-center gap-3">
-                                        LOF Enterprises
+                                        LOF Enterprises Pvt Ltd
                                         <span className="text-xs font-mono text-amber-400 uppercase tracking-wider py-1 px-2 border border-amber-500/20 bg-amber-500/10 rounded shadow-[0_0_10px_rgba(251,191,36,0.2)]">Parent</span>
                                     </h3>
                                     <p>
-                                        The visionary parent conglomerate, orchestrating a legacy of strategic investment and long-term value creation across global markets. LOF Enterprises sets the strategic direction, ensuring sustainable growth and diversified portfolio management.
+                                        The visionary parent conglomerate, orchestrating a legacy of strategic investment and long-term value creation across global markets. LOF Enterprises Pvt Ltd sets the strategic direction, ensuring sustainable growth and diversified portfolio management.
                                     </p>
                                 </motion.div>
 
@@ -635,7 +638,7 @@ const Home = ({ section }) => {
                                                     </p>
                                                 </div>
                                                 <p>
-                                                    He is the founder of <strong className="text-white font-bold">LOF Enterprises</strong>, the parent organization overseeing a growing portfolio of ventures including LOF Industries, LOF Media, and LOF Real Estate, with future expansions planned in FinTech, data center, logistics, and investment-led businesses. Together, these ventures have contributed to a measurable global footprint in the IT procurement and resale market.
+                                                    He is the founder of <strong className="text-white font-bold">LOF Enterprises Pvt Ltd</strong>, the parent organization overseeing a growing portfolio of ventures including LOF Industries, LOF Media, and LOF Real Estate, with future expansions planned in FinTech, data center, logistics, and investment-led businesses. Together, these ventures have contributed to a measurable global footprint in the IT procurement and resale market.
                                                 </p>
                                                 <p>
                                                     Beyond operations, Samuel actively explores strategic investments across real estate, logistics, and emerging business models, positioning himself as an early-stage investor with a long-term vision. At just 21 years of age(as of 2026), he represents a new generation of founders—combining self-learning, execution, and foresight—driven to shape future financial markets and build enduring enterprises with global relevance.
@@ -644,7 +647,7 @@ const Home = ({ section }) => {
 
                                             <div className="pt-12 mt-12 border-t border-white/10">
                                                 <ResponsiveImage image={home_img} alt="Samuel Anthony Dsouza" className="h-28 w-20 rounded-md object-cover object-top shadow-lg border border-white/10 mb-4" />
-                                                <p className="font-mono text-xs text-slate-500 uppercase tracking-widest">Founder & Chairman, LOF Enterprises</p>
+                                                <p className="font-mono text-xs text-slate-500 uppercase tracking-widest">Founder & Chairman, LOF Enterprises Pvt Ltd</p>
                                             </div>
 
                                             {/* Mobile Bottom Back Button */}

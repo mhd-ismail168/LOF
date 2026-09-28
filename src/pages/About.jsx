@@ -36,8 +36,8 @@ const About = () => {
     return (
         <section id="about" className="min-h-screen text-brand-light relative overflow-hidden font-sans pb-12">
             <SEO
-                title="About Us | LOF Enterprises"
-                description="Discover the vision, mission, and strategic roadmap of LOF Enterprises. We are building the systems that power tomorrow's economy."
+                title="About Us | LOF Enterprises Pvt Ltd"
+                description="Discover the vision, mission, and strategic roadmap of LOF Enterprises Pvt Ltd. We are building the systems that power tomorrow's economy."
             />
 
 
@@ -55,7 +55,7 @@ const About = () => {
                         power tomorrow's <span className="text-white">economy.</span>
                     </h1>
                     <p className="text-lg md:text-xl text-zinc-400 max-w-3xl font-mono leading-relaxed border-l-2 border-brand-accent pl-6">
-                        LOF Enterprises is a multi-sector conglomerate designed to solve structural inefficiencies. We integrate capital, technology, and logistics to create scalable infrastructure for the digital age.
+                        LOF Enterprises Pvt Ltd is a multi-sector conglomerate designed to solve structural inefficiencies. We integrate capital, technology, and logistics to create scalable infrastructure for the digital age.
                     </p>
                 </motion.div>
             </div>

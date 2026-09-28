@@ -131,7 +131,7 @@ const Footer = () => {
             <div className="w-full mt-6 pt-2">
                 <div className="text-center">
                     <span className="text-[13px] text-slate-300/90 inline-flex items-center justify-center">
-                        © 2026 LOF Enterprises
+                        © 2026 LOF Enterprises Pvt Ltd
                         <span className="mx-2 text-slate-400">|</span>
                         <a
                             href="https://www.instagram.com/intellex.web?igsh=N2x5bWdnYWc1amdk"

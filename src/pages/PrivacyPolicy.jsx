@@ -34,12 +34,12 @@ const PrivacyPolicy = () => {
                     <section>
                         <h2 className="text-xl font-heading font-bold text-white mb-4 border-l-2 border-brand-accent pl-4">1. Legal Ownership</h2>
                         <div className="space-y-4">
-                            <p>LOFIndustries.com is owned and operated by LOF Enterprises, a registered company.</p>
-                            <p>LOF Enterprises is the legal owner of all rights, intellectual property, branding, materials, and digital assets associated with this website.</p>
-                            <p>LOF Industries is a recognized business name and operating division under LOF Enterprises.</p>
+                            <p>LOFIndustries.com is owned and operated by LOF Enterprises Pvt Ltd, a registered company.</p>
+                            <p>LOF Enterprises Pvt Ltd is the legal owner of all rights, intellectual property, branding, materials, and digital assets associated with this website.</p>
+                            <p>LOF Industries is a recognized business name and operating division under LOF Enterprises Pvt Ltd.</p>
                             <div className="bg-red-500/10 border border-red-500/20 p-4 rounded-sm text-red-200 text-sm">
                                 <strong className="block text-red-400 mb-1 uppercase text-xs tracking-wider">Warning</strong>
-                                Unauthorized use of the names “LOF Enterprises” or “LOF Industries” for any business, commercial, promotional, or misleading purposes is strictly prohibited and may result in legal action.
+                                Unauthorized use of the names “LOF Enterprises Pvt Ltd” or “LOF Industries” for any business, commercial, promotional, or misleading purposes is strictly prohibited and may result in legal action.
                             </div>
                         </div>
                     </section>
@@ -54,15 +54,15 @@ const PrivacyPolicy = () => {
                                 </li>
                             ))}
                         </ul>
-                        <p>are the exclusive property of LOF Enterprises and are protected under applicable intellectual property and trademark laws.</p>
+                        <p>are the exclusive property of LOF Enterprises Pvt Ltd and are protected under applicable intellectual property and trademark laws.</p>
                         <p className="mt-4 p-4 bg-white/5 rounded-sm border-l-2 border-white/20 italic text-slate-400">
-                            No content from this website may be copied, reproduced, republished, distributed, modified, used commercially, stored in any database, used for training AI models, or used for competitive purposes without prior written permission from LOF Enterprises.
+                            No content from this website may be copied, reproduced, republished, distributed, modified, used commercially, stored in any database, used for training AI models, or used for competitive purposes without prior written permission from LOF Enterprises Pvt Ltd.
                         </p>
                     </section>
 
                     <section>
                         <h2 className="text-xl font-heading font-bold text-white mb-4 border-l-2 border-brand-accent pl-4">3. Brand Protection</h2>
-                        <p>The names <strong className="text-white">LOF Enterprises</strong> and <strong className="text-white">LOF Industries</strong> are protected business identities.</p>
+                        <p>The names <strong className="text-white">LOF Enterprises Pvt Ltd</strong> and <strong className="text-white">LOF Industries</strong> are protected business identities.</p>
                         <p className="mt-2">Any unauthorized usage, imitation, replication, or misrepresentation of these names in domain names, business registrations, advertisements, social media, or marketing materials is strictly forbidden.</p>
                         <p className="mt-2 text-red-400 font-medium">Legal action may be taken against misuse.</p>
                     </section>
@@ -70,7 +70,7 @@ const PrivacyPolicy = () => {
                     <section>
                         <h2 className="text-xl font-heading font-bold text-white mb-4 border-l-2 border-brand-accent pl-4">4. Information Accuracy Disclaimer</h2>
                         <p>All information provided on LOFIndustries.com is for informational and business reference purposes only.</p>
-                        <p className="mt-2">While we strive to maintain accuracy, LOF Enterprises does not guarantee completeness, absolute accuracy, continuous availability, or error-free content.</p>
+                        <p className="mt-2">While we strive to maintain accuracy, LOF Enterprises Pvt Ltd does not guarantee completeness, absolute accuracy, continuous availability, or error-free content.</p>
                         <p className="mt-2">We reserve the right to update, modify, or remove content at any time without prior notice.</p>
                     </section>
 
@@ -83,7 +83,7 @@ const PrivacyPolicy = () => {
                                 'Not to attempt unauthorized access',
                                 'Not to scrape or extract data',
                                 'Not to replicate business models',
-                                'Not to impersonate LOF Enterprises or LOF Industries',
+                                'Not to impersonate LOF Enterprises Pvt Ltd or LOF Industries',
                                 'Not to engage in any activity that harms the brand or operations'
                             ].map((item, i) => (
                                 <li key={i} className="flex items-center gap-3 text-slate-300">
@@ -115,7 +115,7 @@ const PrivacyPolicy = () => {
                     <section>
                         <h2 className="text-xl font-heading font-bold text-white mb-4 border-l-2 border-brand-accent pl-4">7. External Links & Liability</h2>
                         <p className="mb-4">LOFIndustries.com may contain links to third-party websites. We are not responsible for their content, privacy practices, or policies. Users access third-party sites at their own risk.</p>
-                        <p>LOF Enterprises shall not be liable for direct or indirect damages, business losses, data loss, website downtime, or any misuse of information. Use of this website is at your own risk.</p>
+                        <p>LOF Enterprises Pvt Ltd shall not be liable for direct or indirect damages, business losses, data loss, website downtime, or any misuse of information. Use of this website is at your own risk.</p>
                     </section>
 
                     <section>
@@ -125,7 +125,7 @@ const PrivacyPolicy = () => {
                     </section>
 
                     <div className="border-t border-white/10 pt-8 mt-12 text-center">
-                        <p className="text-slate-500 text-sm">LOF Enterprises reserves the right to update or modify this policy at any time without prior notice. Continued use of this website constitutes acceptance of any revised terms.</p>
+                        <p className="text-slate-500 text-sm">LOF Enterprises Pvt Ltd reserves the right to update or modify this policy at any time without prior notice. Continued use of this website constitutes acceptance of any revised terms.</p>
                     </div>
 
                 </div>

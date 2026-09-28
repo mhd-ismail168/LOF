@@ -88,8 +88,8 @@ const Contact = () => {
     return (
         <section id="contact" className="min-h-screen py-32 px-6 md:px-12 lg:px-24">
             <SEO
-                title="Contact Us | LOF Enterprises"
-                description="Get in touch with LOF Enterprises. Direct channels to our strategic divisions, administration, and global sales."
+                title="Contact Us | LOF Enterprises Pvt Ltd"
+                description="Get in touch with LOF Enterprises Pvt Ltd. Direct channels to our strategic divisions, administration, and global sales."
             />
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

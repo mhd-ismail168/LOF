@@ -40,7 +40,7 @@ const Company = () => {
     return (
         <div id="company" className="min-h-screen py-32 px-6 md:px-12 relative overflow-hidden text-white">
             <SEO
-                title="Operating Principles & Services | LOF Enterprises"
+                title="Operating Principles & Services | LOF Enterprises Pvt Ltd"
                 description="Explore our operating principles, global logistics solutions, and IT & Data services. We prioritize systems over speed and capital with intent."
             />
             {/* Background Gradients */}
@@ -170,7 +170,7 @@ const Company = () => {
                                 </div>
                                 <h3 className="text-3xl md:text-4xl font-bold text-white">IT & Data Services</h3>
                                 <p className="text-zinc-300 leading-relaxed font-medium">
-                                    In today’s fast-evolving digital landscape, having a robust and secure IT infrastructure is essential for success. At LOF IT & Data Services, a vital division of LOF Enterprises, we provide comprehensive technology and data centre solutions designed to keep your business connected, efficient, and protected.
+                                    In today’s fast-evolving digital landscape, having a robust and secure IT infrastructure is essential for success. At LOF IT & Data Services, a vital division of LOF Enterprises Pvt Ltd, we provide comprehensive technology and data centre solutions designed to keep your business connected, efficient, and protected.
                                 </p>
                                 <p className="text-zinc-300 leading-relaxed font-medium">
                                     Our expert team offers end-to-end management of IT systems, cloud services, data storage, cybersecurity, and 24/7 technical support. Whether you’re scaling up or optimizing existing infrastructure, we deliver reliable, scalable solutions that empower your business to innovate and thrive.
