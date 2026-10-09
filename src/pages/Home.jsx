@@ -377,7 +377,7 @@ const Home = ({ section }) => {
                                         <span className="text-xs font-mono text-amber-400 uppercase tracking-wider py-1 px-2 border border-amber-500/20 bg-amber-500/10 rounded shadow-[0_0_10px_rgba(251,191,36,0.2)]">Parent</span>
                                     </h3>
                                     <p>
-                                        The visionary parent conglomerate, orchestrating a legacy of strategic investment and long-term value creation across global markets. LOF Enterprises Pvt Ltd sets the strategic direction, ensuring sustainable growth and diversified portfolio management.
+                                        The visionary parent conglomerate, orchestrating a legacy of strategic investment and long-term value creation across global markets. LOF Enterprises Pvt Ltd sets the strategic direction, ensuring sustainable growth and diversified portfolio management with turnover around 30 Million.
                                     </p>
                                 </motion.div>
 
